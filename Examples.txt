@@ -1,0 +1,79 @@
+This file contains examples of using SQL Update Manager.
+
+Markup:
+    # - commentary, does not matter to program executing.
+
+1. Update
+
+    Updating obsolete procedures:
+        Command:
+            update MyDatabase
+        Output:
+            #Here will be the list of old procedures.
+            StoredProcedure1.sql
+            StoredProcedure2.sql
+            StoredProcedure3.sql
+            Update database? [yes/no]
+        Command:
+            yes
+        Output:
+            #Here will be the list of executed procedures.
+            Executing procedures. This can take few minutes. Please, wait...
+            Updating StoredProcedure1.sql...
+            Success!
+            Updating StoredProcedure2.sql...
+            Failed! Error text:
+            #This message means that during updating it's SQL Error occured. Under this message will be displayed SQL Error Text.
+            Msg 2714, Level 16, State 3, Server MyServer, Procedure StoredProcedure2, Line 21 There is already object named StoredProcedure2 in database!
+            Continue update? [yes/no/ignore]
+        Command:
+            yes
+        Output:
+            Updating StoredProcedure3.sql...
+            Success!
+            MyDatabase has been successfully updated.
+            #This line will be displayed if TableUpdates feature been installed.
+            tableUpdatesTemplate.data has been updated.
+            lastUpdate.data has been updated.
+
+2. Installation
+
+    #SUM installtion can be started in Install Manager.
+    Installing instance of SQL Update Manager:
+        Command:
+            install
+        Output:
+            config.ini has been created.
+            Please, set the configuration.
+            If you're made a mistake, you can edit configurations in config.ini.
+            Or use command [hardreset] to clear all settings.
+            #If during the installation process Install Manager will be closed, this will cause errors in system.
+            WARNING! DO NOT CLOSE CONSOLE DURING INSTALLATION PROCESS! THIS MAY CAUSE ERRORS!
+            SQL Server name:
+        Command:
+            MyServerName
+        Output:
+            Username:
+        Command:
+            MyUserName
+        Output:
+            Password:
+        Command:
+            Password
+        Output:
+            Database names (Split using [space]):
+        Command:
+            MyDatabase
+        Output:
+            Enter path to stored procedures:
+        Command:
+            #Path to folder with stored procedures.
+            C:\Windows\SSMS\MyDatabase\StoredProcedures
+        Output:
+            #Here manager will check if entered data is right.
+            Checking database configuration, please, wait...
+            Entered configuration data hase been validated.
+            ...
+            Required files has been successfully created.
+        Output
+            Configuration has been finished.

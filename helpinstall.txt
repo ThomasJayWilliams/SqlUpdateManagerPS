@@ -1,0 +1,51 @@
+Available commands for Install Manager:
+
+
+	help
+		Displays help, readed from helpinstall.txt file.
+		Show all available commands and parameters.
+
+	manual
+		Displays instructions for using SQL Update Manager.
+
+	examples
+		Displays examples of using SQL Update Manager.
+
+	reset
+		Deletes config.ini. Use this command, if you need to rewrite configuration.
+		This command requires config.ini to be existing.
+		Requests user confirmation.
+
+	install
+		Starts install process. After running this command you will have to set information, required for correct work of manager.
+		During install process will be created config.ini, where will be stored all of your settings.
+		For editing settings you can change it manually in config.ini.
+		This command requires NO config.ini to be existing.
+
+		Parameters:
+
+		-novalidation
+			Disables database(s) validation by SQL queries.
+			WARNING! Disabled SQL validation may produce errors in update process in case, if entered data is invalid!
+		-notu
+			Starts installation process without installing TableUpdates update feature.
+
+	goto
+		Redirects to SQL Update Manager Console.
+		In the same way you can redirect to Install Manager.
+
+	hardreset
+		Deletes config.ini. Also, deletes all database folders.
+		After running this command command [install] will be triggered immediately.
+		Requests user confirmation.
+		
+		Parameters:
+ 
+		-noinstall
+			Doesn't run install process after deleting files.
+
+		-force
+			Disables user confirmation for hardreset.
+
+	quit
+		Closes console. Use only this command, for correct data saving.

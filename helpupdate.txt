@@ -1,0 +1,50 @@
+Available commands for SQL Update Manager:
+
+
+	help
+		Displays help readed from helpupdate.txt file.
+		Shows all available commands and parameters.
+
+	manual
+		Displays instructions for using SQL Update Manager.
+
+	examples
+		Displays examples of using SQL Update Manager.
+
+	goto
+		Redirects to Setup Manager.
+		May be used in Setup Manager to redirecting back.
+
+	update
+		Starts updating process. Throughout the process you may be asked for accepting or denying updates.
+		
+		Parameters:
+
+		-test
+			Runs update in the test mode. Program will do everything, like in casual mode, but will NOT run any SQL queries.
+			Doesn't update lastUpdate.data, log.txt, tableUpdatesTemplate.data files.
+		-force
+			Disables user confirmation for procedure and table executing.
+		-notu
+			Ignores TableUpdates.
+		-ignoreproc
+			Ignores procedures errors.
+		-ignoretu
+			Ignores TableUpdates errors.
+
+	deploy
+		Starts deploying entered database. During deploying all of existing procedures will be executed.
+		As a rule, this takes some time.
+
+		Parameters:
+	
+		-test
+			Runs update in the test mode. Program will do everything, like in casual mode, but will NOT run any SQL queries.
+			Doesn't update lastUpdate.data, log.txt, tableUpdatesTemplate.data files.
+		-force
+			Disables user confirmation for procedure and table executing.
+		-ignoreproc
+			Ignores procedures errors.
+
+	quit
+		Closes the Update Manager console.
